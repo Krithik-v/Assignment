@@ -128,7 +128,7 @@ async def read_trade(order_Id : str):
 
 
 @app.get("/search")
-async def search_trade(page:int,search:str,page_rate : Optional[str] = 10,case_sensitive : Optional[bool] = False,sort_by : Optional[str] = None, isdesc: Optional[bool] = False):
+async def search_trade(page:int,search:str,page_rate : Optional[int] = 10,case_sensitive : Optional[bool] = False,sort_by : Optional[str] = None, isdesc: Optional[bool] = False):
     page = page - 1
     if page_rate<= 0:
         return {"status": "failure", "message": "Oops! Invalid page rate"}, 400
